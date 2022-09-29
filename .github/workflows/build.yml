@@ -1,0 +1,56 @@
+name: Build
+run-name: Build Image [${{ inputs.BDS_VERSION }}]
+on:
+  workflow_dispatch:
+    inputs:
+      BDS_VERSION:
+        description: "The BDS version"
+        default: "1.19.30.04"
+        required: true
+        type: string
+      USE_LATEST_TAG:
+        description: "Attach the latest tag to image"
+        default: false
+        required: true
+        type: boolean
+env:
+  IMAGE_NAME: bedrock-server
+  IMAGE_REGISTRY: ghcr.io/scriptapioss
+  REGISTRY_USER: ${{ github.repository_owner }}
+  REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+  LATEST_TAG: ""
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Attach latest tag
+        if: inputs.USE_LATEST_TAG
+        run: echo "LATEST_TAG=latest" >> $GITHUB_ENV
+
+      - name: Buildah Action
+        id: build_image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          tags: ${{ env.LATEST_TAG }} ${{ inputs.BDS_VERSION }}
+          containerfiles: |
+            ./Containerfile
+          build-args: |
+            BDS_VERSION=${{ inputs.BDS_VERSION }}
+          oci: true
+
+      - name: Push To GHCR
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ steps.build_image.outputs.image }}
+          tags: ${{ steps.build_image.outputs.tags }}
+          registry: ${{ env.IMAGE_REGISTRY }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
