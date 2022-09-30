@@ -40,13 +40,8 @@ jobs:
             echo " - $v" >> $GITHUB_STEP_SUMMARY
           done
 
-  IssueRebuilds:
+  IssueRebuildStable:
     runs-on: ubuntu-latest
-    if: needs.FindVersions.outputs.VERSIONS_MATRIX != '[]'
-    strategy:
-      matrix:
-        version: ${{ fromJson(needs.FindVersions.outputs.VERSIONS_MATRIX) }}
-
     needs: FindVersions
     steps:
       - name: Get app token
@@ -70,6 +65,22 @@ jobs:
                 USE_LATEST_TAG: "true"
               }
             })
+
+  IssueRebuildsOld:
+    runs-on: ubuntu-latest
+    if: needs.FindVersions.outputs.VERSIONS_MATRIX != '[]'
+    strategy:
+      matrix:
+        version: ${{ fromJson(needs.FindVersions.outputs.VERSIONS_MATRIX) }}
+
+    needs: FindVersions
+    steps:
+      - name: Get app token
+        id: get_bot_token
+        uses: machine-learning-apps/actions-app-token@master
+        with:
+          APP_PEM: ${{ secrets.BDS_APP_PEM }}
+          APP_ID: ${{ secrets.BDS_APP_ID }}
       - name: Trigger build [${{ matrix.version }}]
         uses: actions/github-script@v6
         with:
