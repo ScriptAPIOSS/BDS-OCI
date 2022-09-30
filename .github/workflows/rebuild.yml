@@ -8,6 +8,7 @@ jobs:
     outputs:
       STABLE: ${{ steps.versions.outputs.STABLE }}
       VERSIONS: ${{ steps.versions.outputs.VERSIONS }}
+      VERSIONS_JSON: ${{ steps.versions.outputs.VERSIONS_JSON }}
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +26,11 @@ jobs:
         run: |
           STABLE=`echo '${{ steps.versions_json.outputs.response }}' | jq -r '.data.linux.stable'`
           VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq -r --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable))) | .[]'`
+          VERSIONS_JSON=`echo '${{ steps.versions_json.outputs.response }}' | jq -c --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
 
           echo "::set-output name=STABLE::${STABLE}"
           echo "::set-output name=VERSIONS::${VERSIONS}"
+          echo "::set-output name=VERSIONS_JSON::${VERSIONS_JSON}"
 
       - name: Output to summary
         run: |
@@ -41,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ${{ needs.FindVersions.outputs.VERSIONS }}
+        version: ${{ needs.FindVersions.outputs.VERSIONS_JSON }}
 
     needs: FindVersions
     steps:
