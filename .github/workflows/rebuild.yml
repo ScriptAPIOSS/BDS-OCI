@@ -41,6 +41,7 @@ jobs:
           done
 
   IssueRebuildStable:
+    name: Rebuild stable BDS
     runs-on: ubuntu-latest
     needs: FindVersions
     steps:
@@ -67,6 +68,7 @@ jobs:
             })
 
   IssueRebuildsOld:
+    name: Rebuild old BDS
     runs-on: ubuntu-latest
     if: needs.FindVersions.outputs.VERSIONS_MATRIX != '[]'
     strategy:
