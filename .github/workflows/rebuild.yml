@@ -8,7 +8,6 @@ jobs:
     outputs:
       STABLE: ${{ steps.versions.outputs.STABLE }}
       VERSIONS: ${{ steps.versions.outputs.VERSIONS }}
-      VERSIONS_JSON: ${{ steps.versions.outputs.VERSIONS_JSON }}
     runs-on: ubuntu-latest
 
     steps:
@@ -25,12 +24,10 @@ jobs:
         id: versions
         run: |
           STABLE=`echo '${{ steps.versions_json.outputs.response }}' | jq -r '.data.linux.stable'`
-          VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq -r --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
-          VERSION_JSON=`echo '${{ steps.versions_json.outputs.response }}' | jq --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
+          VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq -r --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable))) | .[]'`
 
           echo "::set-output name=STABLE::${STABLE}"
           echo "::set-output name=VERSIONS::${VERSIONS}"
-          echo "::set-output name=VERSIONS_JSON::${VERSION_JSON}"
 
       - name: Output to summary
         run: |
