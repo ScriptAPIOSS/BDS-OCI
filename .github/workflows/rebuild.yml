@@ -20,8 +20,8 @@ jobs:
       - name: Extract linux versions
         id: versions
         run: |
-          STABLE=`echo "${{ steps.versions_json.outputs.response }}" | jq -r '.linux.stable'`
-          VERSIONS=`echo "${{ steps.versions_json.outputs.response }}" | jq --arg stable "$STABLE" '.linux.versions | del(.[] | select(. == ($stable)))'`
+          STABLE=`echo "${{ steps.versions_json.outputs.response.data }}" | jq -r '.linux.stable'`
+          VERSIONS=`echo "${{ steps.versions_json.outputs.response.data }}" | jq --arg stable "$STABLE" '.linux.versions | del(.[] | select(. == ($stable)))'`
 
           echo "::set-output name=STABLE::${STABLE}"
           echo "::set-output name=VERSIONS::${VERSIONS}"
