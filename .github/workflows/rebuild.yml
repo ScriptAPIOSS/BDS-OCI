@@ -42,7 +42,7 @@ jobs:
 
   IssueRebuilds:
     runs-on: ubuntu-latest
-    if: fromJson(needs.FindVersions.outputs.VERSIONS_MATRIX)
+    if: needs.FindVersions.outputs.VERSIONS_MATRIX != "[]"
     strategy:
       matrix:
         version: ${{ fromJson(needs.FindVersions.outputs.VERSIONS_MATRIX) }}
