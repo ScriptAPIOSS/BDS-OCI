@@ -30,6 +30,7 @@ jobs:
         run: |
           echo "${{ steps.versions.outputs.STABLE }}"
           echo "${{ steps.versions.outputs.VERSIONS }}"
+          echo "\`${{ steps.versions.outputs.STABLE }}\`" >> $GITHUB_STEP_SUMMARY
 
       # - name:
       #   uses: actions/github-script@v6
