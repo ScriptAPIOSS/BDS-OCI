@@ -8,6 +8,7 @@ jobs:
     outputs:
       STABLE: ${{ steps.versions.outputs.STABLE }}
       VERSIONS: ${{ steps.versions.outputs.VERSIONS }}
+      VERSIONS_JSON: ${{ steps.versions.outputs.VERSIONS_JSON }}
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +26,11 @@ jobs:
         run: |
           STABLE=`echo '${{ steps.versions_json.outputs.response }}' | jq -r '.data.linux.stable'`
           VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq -r --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
+          VERSION_JSON=`echo '${{ steps.versions_json.outputs.response }}' | jq --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
 
           echo "::set-output name=STABLE::${STABLE}"
           echo "::set-output name=VERSIONS::${VERSIONS}"
+          echo "::set-output name=VERSIONS_JSON::${VERSION_JSON}"
 
       - name: Output to summary
         run: |
@@ -37,14 +40,24 @@ jobs:
             echo " - $v" >> $GITHUB_STEP_SUMMARY
           done
 
-  BuildStable:
+  IssueRebuilds:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ${{ needs.FindVersions.outputs.VERSIONS_JSON }}
+
     needs: FindVersions
     steps:
-      - name:
+      - name: Get app token
+        id: get_bot_token
+        uses: machine-learning-apps/actions-app-token@master
+        with:
+          APP_PEM: ${{ secrets.BDS_APP_PEM }}
+          APP_ID: ${{ secrets.BDS_APP_ID }}
+      - name: Trigger stable build
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ steps.get_bot_token.outputs.app_token }}
           script: |
             await github.rest.actions.createWorkflowDispatch({
               owner: 'ScriptAPIOSS',
@@ -54,5 +67,20 @@ jobs:
               inputs: {
                 BDS_VERSION: '${{ needs.FindVersions.outputs.STABLE }}',
                 USE_LATEST_TAG: "true"
+              }
+            })
+      - name: Trigger build [${{ matrix.version }}]
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ steps.get_bot_token.outputs.app_token }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'ScriptAPIOSS',
+              repo: 'BDS-OCI',
+              workflow_id: 'build.yml',
+              ref: 'main',
+              inputs: {
+                BDS_VERSION: '${{ matrix.version }}',
+                USE_LATEST_TAG: "false"
               }
             })
