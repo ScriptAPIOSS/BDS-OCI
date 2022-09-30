@@ -1,0 +1,48 @@
+name: Rebuild
+run-name: Rebuilding all images
+on:
+  workflow_dispatch:
+jobs:
+  rebuild:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Call versions endpoint"
+        uses: indiesdev/curl@v1.1
+        id: versions_json
+        with:
+          url: https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/versions.json
+          method: "GET"
+          accept: 200
+          log-response: true
+
+      - name: Extract linux versions
+        id: versions
+        run: |
+          STABLE=`echo ${{ steps.versions_json.outputs.response }} | jq -r '.linux.stable'`
+          VERSIONS=`echo ${{ steps.versions_json.outputs.response }} | jq --arg stable "$STABLE" '.linux.versions | del(.[] | select(. == ($stable)))'`
+
+          echo "::set-output name=STABLE::${STABLE}"
+          echo "::set-output name=VERSIONS::${VERSIONS}"
+
+      - name: Echo
+        run: |
+          echo "${{ steps.versions.outputs.STABLE }}"
+          echo "${{ steps.versions.outputs.VERSIONS }}"
+
+      # - name:
+      #   uses: actions/github-script@v6
+      #   with:
+      #     github-token: ${{ steps.get_bot_token.outputs.app_token }}
+      #     script: |
+      #       await github.rest.actions.createWorkflowDispatch({
+      #         owner: 'ScriptAPIOSS',
+      #         repo: 'BDS-OCI',
+      #         workflow_id: 'build.yml',
+      #         ref: 'main',
+      #         inputs: {
+      #           BDS_VERSION: '${{needs.Perform-Fetch.outputs.LATEST_LINUX_VERSION}}',
+      #           USE_LATEST_TAG: "true"
+      #         }
+      #       })
