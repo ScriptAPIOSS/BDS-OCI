@@ -21,16 +21,18 @@ jobs:
         id: versions
         run: |
           STABLE=`echo '${{ steps.versions_json.outputs.response }}' | jq -r '.data.linux.stable'`
-          VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
+          VERSIONS=`echo '${{ steps.versions_json.outputs.response }}' | jq -r --arg stable "$STABLE" '.data.linux.versions | del(.[] | select(. == ($stable)))'`
 
           echo "::set-output name=STABLE::${STABLE}"
           echo "::set-output name=VERSIONS::${VERSIONS}"
 
-      - name: Echo
+      - name: Output to summary
         run: |
-          echo "${{ steps.versions.outputs.STABLE }}"
-          echo "${{ steps.versions.outputs.VERSIONS }}"
-          echo "\`${{ steps.versions.outputs.STABLE }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "Stable: \`${{ steps.versions.outputs.STABLE }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "Versions:" >> $GITHUB_STEP_SUMMARY
+          for $v in ${{ steps.versions.outputs.VERSIONS }}; do
+            echo " - $v" >> $GITHUB_STEP_SUMMARY
+          done
 
       # - name:
       #   uses: actions/github-script@v6
