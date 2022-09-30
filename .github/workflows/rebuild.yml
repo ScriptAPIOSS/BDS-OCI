@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Stable: \`${{ steps.versions.outputs.STABLE }}\`" >> $GITHUB_STEP_SUMMARY
           echo "Versions:" >> $GITHUB_STEP_SUMMARY
-          for $v in ${{ steps.versions.outputs.VERSIONS }}; do
+          for v in ${{ steps.versions.outputs.VERSIONS }}; do
             echo " - $v" >> $GITHUB_STEP_SUMMARY
           done
 
