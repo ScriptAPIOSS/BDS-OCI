@@ -8,11 +8,22 @@ on:
         default: "1.19.30.04"
         required: true
         type: string
+      USE_STABLE_TAG:
+        description: "Attach the stable tag to image"
+        default: false
+        required: true
+        type: boolean
+      USE_PREVIEW_TAG:
+        description: "Attach the preview tag to image"
+        default: false
+        required: true
+        type: boolean
       USE_LATEST_TAG:
         description: "Attach the latest tag to image"
         default: false
         required: true
         type: boolean
+
 env:
   IMAGE_NAME: bedrock-server
   IMAGE_REGISTRY: ghcr.io/scriptapioss
@@ -31,13 +42,19 @@ jobs:
       - name: Attach latest tag
         if: inputs.USE_LATEST_TAG
         run: echo "LATEST_TAG=latest" >> $GITHUB_ENV
+      - name: Attach stable tag
+        if: inputs.USE_STABLE_TAG
+        run: echo "STABLE_TAG=stable" >> $GITHUB_ENV
+      - name: Attach preview tag
+        if: inputs.USE_PREVIEW_TAG
+        run: echo "PREVIEW_TAG=preview" >> $GITHUB_ENV
 
       - name: Buildah Action
         id: build_image
         uses: redhat-actions/buildah-build@v2
         with:
           image: ${{ env.IMAGE_NAME }}
-          tags: ${{ env.LATEST_TAG }} ${{ inputs.BDS_VERSION }}
+          tags: ${{ env.LATEST_TAG }} ${{ env.STABLE_TAG }} ${{ env.PREVIEW_TAG }} ${{ inputs.BDS_VERSION }}
           containerfiles: |
             ./Containerfile
           build-args: |
