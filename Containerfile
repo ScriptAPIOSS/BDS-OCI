@@ -1,5 +1,6 @@
 FROM alpine:3.16.2 AS builder
 
+ARG PATH_MODIFIER
 ARG BDS_VERSION
 
 ENV USER=bds
@@ -18,7 +19,7 @@ WORKDIR /work/
 
 RUN apk add wget unzip jq curl
 
-RUN BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/linux/${BDS_VERSION}.json | jq -r '.download_url'` && wget -q ${BDS_URL} -O bds.zip
+RUN BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/linux${PATH_MODIFIER}/${BDS_VERSION}.json | jq -r '.download_url'` && wget -q ${BDS_URL} -O bds.zip
 RUN unzip bds.zip
 RUN rm bds.zip bedrock_server_how_to.html bedrock_server_symbols.debug release-notes.txt
 
