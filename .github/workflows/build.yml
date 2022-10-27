@@ -44,10 +44,14 @@ jobs:
         run: echo "LATEST_TAG=latest" >> $GITHUB_ENV
       - name: Attach stable tag
         if: inputs.USE_STABLE_TAG
-        run: echo "STABLE_TAG=stable" >> $GITHUB_ENV
+        run: |
+          echo "STABLE_TAG=stable" >> $GITHUB_ENV
+          echo "PATH_MODIFIER=" >> $GITHUB_ENV
       - name: Attach preview tag
         if: inputs.USE_PREVIEW_TAG
-        run: echo "PREVIEW_TAG=preview" >> $GITHUB_ENV
+        run: |
+          echo "PREVIEW_TAG=preview" >> $GITHUB_ENV
+          echo "PATH_MODIFIER=_preview" >> $GITHUB_ENV
 
       - name: Buildah Action
         id: build_image
@@ -59,6 +63,7 @@ jobs:
             ./Containerfile
           build-args: |
             BDS_VERSION=${{ inputs.BDS_VERSION }}
+            PATH_MODIFIER=${{ env.PATH_MODIFIER }}
           oci: true
 
       - name: Push To GHCR
