@@ -39,6 +39,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Sermver tags
+        run: |
+          VERSION="$1"
+          VERSION="${VERSION#[vV]}"
+          VERSION_MAJOR="${VERSION%%\.*}"
+          VERSION_MINOR="${VERSION#*.}"
+          VERSION_MINOR="${VERSION_MINOR%.*}"
+          VERSION_PATCH="${VERSION##*.}"
+
+          echo "MAJORMINORVERSION=latest-${VERSION_MAJOR}.${VERSION_MINOR}" >> $GITHUB_ENV
+
       - name: Attach latest tag
         if: inputs.USE_LATEST_TAG
         run: echo "LATEST_TAG=latest" >> $GITHUB_ENV
@@ -58,7 +69,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: ${{ env.IMAGE_NAME }}
-          tags: ${{ env.LATEST_TAG }} ${{ env.STABLE_TAG }} ${{ env.PREVIEW_TAG }} ${{ inputs.BDS_VERSION }}
+          tags: ${{ env.MAJORMINORVERSION }} ${{ env.LATEST_TAG }} ${{ env.STABLE_TAG }} ${{ env.PREVIEW_TAG }} ${{ inputs.BDS_VERSION }}
           containerfiles: |
             ./Containerfile
           build-args: |
