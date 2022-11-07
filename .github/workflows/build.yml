@@ -54,8 +54,8 @@ jobs:
           cd dump/
           unzip bds.zip
 
-          mv config/ ../defaults/config/
-          mv server.properties ../defaults/server.properties
+          cp -R config/ ../defaults/config/
+          cp server.properties ../defaults/server.properties
 
           cd ..
 
