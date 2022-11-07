@@ -21,7 +21,7 @@ RUN apk add wget unzip jq curl
 
 RUN BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/linux${PATH_MODIFIER}/${BDS_VERSION}.json | jq -r '.download_url'` && wget -q ${BDS_URL} -O bds.zip
 RUN unzip bds.zip
-RUN rm bds.zip bedrock_server_* *.so release-notes.txt valid_known_packs.json premium_cache
+RUN rm bds.zip bedrock_server_* release-notes.txt
 
 FROM ubuntu:jammy-20220815
 
