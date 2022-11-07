@@ -34,7 +34,6 @@ jobs:
   defaults:
     name: Dump defaults
     runs-on: ubuntu-latest
-    if: inputs.USE_LATEST_TAG
 
     steps:
       - name: Checkout
