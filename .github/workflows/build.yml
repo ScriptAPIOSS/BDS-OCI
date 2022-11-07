@@ -31,6 +31,53 @@ env:
   REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
   LATEST_TAG: ""
 jobs:
+  defaults:
+    name: Dump defaults
+    runs-on: ubuntu-latest
+    if: inputs.USE_LATEST_TAG
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download and dump
+        run: |
+          mkdir dump/
+          rm -rf defaults/
+          mkdir defaults/
+
+          BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.json | jq -r '.download_url'` && wget -q ${BDS_URL} -O dump/bds.zip
+          cd dump/
+          unzip bds.zip
+
+          mv config/ ../defaults/config/
+          mv server.properties ../defaults/server.properties
+
+          cd ..
+
+          rm -rf dump/
+
+      - name: Check if there are changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+
+      - uses: EndBug/add-and-commit@v9
+        if: steps.changes.outputs.changed == 1
+        with:
+          default_author: github_actions
+          message: 'New defaults for ${{ inputs.BDS_VERSION }}'
+          new_branch: defaults-${{ inputs.BDS_VERSION }}
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 1
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: New defaults for ${{ inputs.BDS_VERSION }}
+          body: New changes were discovered for ${{ inputs.BDS_VERSION }}, please review
+          labels: defaults
+          assignees: GTB3NW
+          reviewers: GTB3NW
+
   build:
     name: Build image
     runs-on: ubuntu-latest
