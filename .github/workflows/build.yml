@@ -39,6 +39,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Attach preview tag
+        if: inputs.USE_PREVIEW_TAG
+        run: |
+          echo "PATH_MODIFIER=_preview" >> $GITHUB_ENV
+
       - name: Download and dump
         run: |
           mkdir dump/
