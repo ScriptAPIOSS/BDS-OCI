@@ -54,14 +54,14 @@ jobs:
           cd dump/
           unzip bds.zip
 
-          cp -R config/ ../defaults/config/
-          cp server.properties ../defaults/server.properties
+          mv config/ ../defaults/config/
+          mv server.properties ../defaults/server.properties
 
           cd ..
 
           rm -rf dump/
 
-          chown -R `whoami` defaults/
+          git config --global --add safe.directory /github/workspace
 
       - name: Check if there are changes
         id: changes
