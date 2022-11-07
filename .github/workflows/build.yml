@@ -61,14 +61,12 @@ jobs:
 
           rm -rf dump/
 
-          git config --global --add safe.directory /github/workspace
-
-      - name: Check if there are changes
+      - name: Check if there is any change
         id: changes
-        uses: UnicornGlobal/has-changes-action@v1.0.11
+        run: echo "::set-output name=changed::$(git status --porcelain | wc -l)"
 
       - uses: EndBug/add-and-commit@v9
-        if: steps.changes.outputs.changed == 1
+        if: steps.changes.outputs.changed != 0
         with:
           default_author: github_actions
           message: 'New defaults for ${{ inputs.BDS_VERSION }}'
