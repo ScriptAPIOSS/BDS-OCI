@@ -81,6 +81,8 @@ jobs:
           labels: defaults
           assignees: GTB3NW
           reviewers: GTB3NW
+          branch: defaults-${{ inputs.BDS_VERSION }}
+          base: main
 
   build:
     name: Build image
