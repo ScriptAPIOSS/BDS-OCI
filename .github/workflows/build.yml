@@ -61,6 +61,8 @@ jobs:
 
           rm -rf dump/
 
+          chown -R `whoami` defaults/
+
       - name: Check if there are changes
         id: changes
         uses: UnicornGlobal/has-changes-action@v1.0.11
