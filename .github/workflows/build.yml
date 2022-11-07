@@ -63,7 +63,7 @@ jobs:
 
       - name: Check if there is any change
         id: changes
-        run: echo "::set-output name=changed::$(git status --porcelain | wc -l)"
+        run: echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed != 0
