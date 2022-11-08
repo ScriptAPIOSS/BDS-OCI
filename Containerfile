@@ -45,6 +45,8 @@ RUN apt update && \
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group  /etc/group
 
+COPY property-definitions.json /etc/property-definitions.json
+
 COPY --from=builder --chown=10001:0 --chmod=700 /work/   /bedrock-server/
 COPY                --chown=10001:0 --chmod=700 entry.sh /opt/entry.sh
 

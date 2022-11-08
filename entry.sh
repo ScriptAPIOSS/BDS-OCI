@@ -10,6 +10,10 @@ if [[ ${PP_ACCEPT^^} != TRUE ]]; then
   exit 1
 fi
 
+echo "Applying server properties"
+
+set-property --file server.properties --bulk /etc/property-definitions.json
+
 echo "Starting server"
 
 exec /bedrock-server/bedrock_server
