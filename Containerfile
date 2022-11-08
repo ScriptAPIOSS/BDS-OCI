@@ -17,7 +17,7 @@ RUN adduser \
 
 WORKDIR /work/
 
-COPY checksums.txt
+COPY checksums.txt /work/checksums.txt
 
 RUN apk add wget unzip jq curl
 
