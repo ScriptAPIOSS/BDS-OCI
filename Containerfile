@@ -19,6 +19,11 @@ WORKDIR /work/
 
 RUN apk add wget unzip jq curl
 
+RUN wget https://github.com/itzg/set-property/releases/download/0.1.1/set-property_0.1.1_linux_arm64.tar.gz
+RUN sha256sum -c checksums.txt
+RUN tar -xvf set-property_0.1.1_linux_arm64.tar.gz
+RUN mv LICENSE set-property-LICENSE && rm README.md
+
 RUN BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/linux${PATH_MODIFIER}/${BDS_VERSION}.json | jq -r '.download_url'` && wget -q ${BDS_URL} -O bds.zip
 RUN unzip bds.zip
 RUN rm bds.zip bedrock_server_* release-notes.txt
