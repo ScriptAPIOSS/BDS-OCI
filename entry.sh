@@ -12,7 +12,7 @@ fi
 
 echo "Applying server properties"
 
-set-property --file server.properties --bulk /etc/property-definitions.json
+./set-property --file server.properties --bulk /etc/property-definitions.json
 
 echo "Starting server"
 
