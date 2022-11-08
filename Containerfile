@@ -17,6 +17,8 @@ RUN adduser \
 
 WORKDIR /work/
 
+COPY checksums.txt
+
 RUN apk add wget unzip jq curl
 
 RUN wget https://github.com/itzg/set-property/releases/download/0.1.1/set-property_0.1.1_linux_arm64.tar.gz
