@@ -24,6 +24,12 @@ on:
         required: true
         type: boolean
 
+      DUMP_DEFAULTS:
+        description: "Dump default files as part of pipeline"
+        default: false
+        required: true
+        type: boolean
+
 env:
   IMAGE_NAME: bedrock-server
   IMAGE_REGISTRY: ghcr.io/scriptapioss
@@ -33,6 +39,7 @@ env:
 jobs:
   defaults:
     name: Dump defaults
+    if: inputs.DUMP_DEFAULTS
     runs-on: ubuntu-latest
 
     steps:
