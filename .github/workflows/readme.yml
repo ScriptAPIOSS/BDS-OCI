@@ -22,3 +22,9 @@ jobs:
           do
               echo "| ${c} | | |" >> TEST_README.md
           done
+
+      - name: Try commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: "Updated readme"
