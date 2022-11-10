@@ -20,39 +20,27 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 
 <table>
   <tr><th><strong>Property Name</strong></th><th><strong>ENV</strong></th><th><strong>Enums</strong></th></tr>
-<tr><td> <code>allow-cheats</code> </td>
+<tr><td> allow-cheats </td>
 <td>
-
-```bash
-ALLOW_CHEATS
-```
-
+<code>ALLOW_CHEATS</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>allow-list</code> </td>
+<tr><td> allow-list </td>
 <td>
-
-```bash
-ALLOW_LIST
-```
-
+<code>ALLOW_LIST</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>chat-restriction</code> </td>
+<tr><td> chat-restriction </td>
 <td>
-
-```bash
-CHAT_RESTRICTION
-```
-
+<code>CHAT_RESTRICTION</code>
 </td>
 <td>
 <ul><li><code>None</code></li>
@@ -60,77 +48,53 @@ CHAT_RESTRICTION
 <li><code>Disabled</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>client-side-chunk-generation-enabled</code> </td>
+<tr><td> client-side-chunk-generation-enabled </td>
 <td>
-
-```bash
-CLIENT_SIDE_CHUNK_GENERATION_ENABLED
-```
-
+<code>CLIENT_SIDE_CHUNK_GENERATION_ENABLED</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>compression-algorithm</code> </td>
+<tr><td> compression-algorithm </td>
 <td>
-
-```bash
-COMPRESSION_ALGORITHM
-```
-
+<code>COMPRESSION_ALGORITHM</code>
 </td>
 <td>
 <ul><li><code>zlib</code></li>
 <li><code>snappy</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>compression-threshold</code> </td>
+<tr><td> compression-threshold </td>
 <td>
-
-```bash
-COMPRESSION_THRESHOLD
-```
-
+<code>COMPRESSION_THRESHOLD</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>content-log-file-enabled</code> </td>
+<tr><td> content-log-file-enabled </td>
 <td>
-
-```bash
-CONTENT_LOG_FILE_ENABLED
-```
-
+<code>CONTENT_LOG_FILE_ENABLED</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>correct-player-movement</code> </td>
+<tr><td> correct-player-movement </td>
 <td>
-
-```bash
-CORRECT_PLAYER_MOVEMENT
-```
-
+<code>CORRECT_PLAYER_MOVEMENT</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>default-player-permission-level</code> </td>
+<tr><td> default-player-permission-level </td>
 <td>
-
-```bash
-DEFAULT_PLAYER_PERMISSION_LEVEL
-```
-
+<code>DEFAULT_PLAYER_PERMISSION_LEVEL</code>
 </td>
 <td>
 <ul><li><code>visitor</code></li>
@@ -138,13 +102,9 @@ DEFAULT_PLAYER_PERMISSION_LEVEL
 <li><code>operator</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>difficulty</code> </td>
+<tr><td> difficulty </td>
 <td>
-
-```bash
-DIFFICULTY
-```
-
+<code>DIFFICULTY</code>
 </td>
 <td>
 <ul><li><code>easy</code></li>
@@ -153,65 +113,45 @@ DIFFICULTY
 <li><code>hard</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>disable-player-interaction</code> </td>
+<tr><td> disable-player-interaction </td>
 <td>
-
-```bash
-DISABLE_PLAYER_INTERACTION
-```
-
+<code>DISABLE_PLAYER_INTERACTION</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>emit-server-telemetry</code> </td>
+<tr><td> emit-server-telemetry </td>
 <td>
-
-```bash
-EMIT_SERVER_TELEMETRY
-```
-
+<code>EMIT_SERVER_TELEMETRY</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>enable-lan-visibility</code> </td>
+<tr><td> enable-lan-visibility </td>
 <td>
-
-```bash
-ENABLE_LAN_VISIBILITY
-```
-
+<code>ENABLE_LAN_VISIBILITY</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>force-gamemode</code> </td>
+<tr><td> force-gamemode </td>
 <td>
-
-```bash
-FORCE_GAMEMODE
-```
-
+<code>FORCE_GAMEMODE</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>gamemode</code> </td>
+<tr><td> gamemode </td>
 <td>
-
-```bash
-GAMEMODE
-```
-
+<code>GAMEMODE</code>
 </td>
 <td>
 <ul><li><code>survival</code></li>
@@ -219,37 +159,25 @@ GAMEMODE
 <li><code>adventure</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>level-name</code> </td>
+<tr><td> level-name </td>
 <td>
-
-```bash
-LEVEL_NAME
-```
-
+<code>LEVEL_NAME</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>level-seed</code> </td>
+<tr><td> level-seed </td>
 <td>
-
-```bash
-LEVEL_SEED
-```
-
+<code>LEVEL_SEED</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>level-type</code> </td>
+<tr><td> level-type </td>
 <td>
-
-```bash
-LEVEL_TYPE
-```
-
+<code>LEVEL_TYPE</code>
 </td>
 <td>
 <ul><li><code>DEFAULT</code></li>
@@ -257,123 +185,83 @@ LEVEL_TYPE
 <li><code>LEGACY</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>max-players</code> </td>
+<tr><td> max-players </td>
 <td>
-
-```bash
-MAX_PLAYERS
-```
-
+<code>MAX_PLAYERS</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>max-threads</code> </td>
+<tr><td> max-threads </td>
 <td>
-
-```bash
-MAX_THREADS
-```
-
+<code>MAX_THREADS</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>online-mode</code> </td>
+<tr><td> online-mode </td>
 <td>
-
-```bash
-ONLINE_MODE
-```
-
+<code>ONLINE_MODE</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>player-idle-timeout</code> </td>
+<tr><td> player-idle-timeout </td>
 <td>
-
-```bash
-PLAYER_IDLE_TIMEOUT
-```
-
+<code>PLAYER_IDLE_TIMEOUT</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>player-movement-action-direction-threshold</code> </td>
+<tr><td> player-movement-action-direction-threshold </td>
 <td>
-
-```bash
-PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD
-```
-
+<code>PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>player-movement-distance-threshold</code> </td>
+<tr><td> player-movement-distance-threshold </td>
 <td>
-
-```bash
-PLAYER_MOVEMENT_DISTANCE_THRESHOLD
-```
-
+<code>PLAYER_MOVEMENT_DISTANCE_THRESHOLD</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>player-movement-duration-threshold-in-ms</code> </td>
+<tr><td> player-movement-duration-threshold-in-ms </td>
 <td>
-
-```bash
-PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS
-```
-
+<code>PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>player-movement-score-threshold</code> </td>
+<tr><td> player-movement-score-threshold </td>
 <td>
-
-```bash
-PLAYER_MOVEMENT_SCORE_THRESHOLD
-```
-
+<code>PLAYER_MOVEMENT_SCORE_THRESHOLD</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>server-authoritative-block-breaking</code> </td>
+<tr><td> server-authoritative-block-breaking </td>
 <td>
-
-```bash
-SERVER_AUTHORITATIVE_BLOCK_BREAKING
-```
-
+<code>SERVER_AUTHORITATIVE_BLOCK_BREAKING</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>server-authoritative-movement</code> </td>
+<tr><td> server-authoritative-movement </td>
 <td>
-
-```bash
-SERVER_AUTHORITATIVE_MOVEMENT
-```
-
+<code>SERVER_AUTHORITATIVE_MOVEMENT</code>
 </td>
 <td>
 <ul><li><code>server-auth</code></li>
@@ -381,86 +269,58 @@ SERVER_AUTHORITATIVE_MOVEMENT
 <li><code>server-auth-with-rewind</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>server-name</code> </td>
+<tr><td> server-name </td>
 <td>
-
-```bash
-SERVER_NAME
-```
-
+<code>SERVER_NAME</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>server-port</code> </td>
+<tr><td> server-port </td>
 <td>
-
-```bash
-SERVER_PORT
-```
-
+<code>SERVER_PORT</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>server-portv6</code> </td>
+<tr><td> server-portv6 </td>
 <td>
-
-```bash
-SERVER_PORT_V6
-```
-
+<code>SERVER_PORT_V6</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>texturepack-required</code> </td>
+<tr><td> texturepack-required </td>
 <td>
-
-```bash
-TEXTUREPACK_REQUIRED
-```
-
+<code>TEXTUREPACK_REQUIRED</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
 <li><code>false</code></li></ul>
 </td>
 </tr>
-<tr><td> <code>tick-distance</code> </td>
+<tr><td> tick-distance </td>
 <td>
-
-```bash
-TICK_DISTANCE
-```
-
+<code>TICK_DISTANCE</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>view-distance</code> </td>
+<tr><td> view-distance </td>
 <td>
-
-```bash
-VIEW_DISTANCE
-```
-
+<code>VIEW_DISTANCE</code>
 </td>
 <td>
 <ul></ul>
 </td>
 </tr>
-<tr><td> <code>white-list</code> </td>
+<tr><td> white-list </td>
 <td>
-
-```bash
-WHITE_LIST
-```
-
+<code>WHITE_LIST</code>
 </td>
 <td>
 <ul><li><code>true</code></li>
