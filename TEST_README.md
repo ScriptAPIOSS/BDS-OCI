@@ -1,5 +1,6 @@
 
 | Property | ENV | ARGS |
+| -------- | --- | ---- |
 | allow-cheats | | |
 | allow-list | | |
 | chat-restriction | | |
