@@ -21,7 +21,7 @@ jobs:
 
           for c in `cat property-definitions.json | jq -r 'keys[]'`
           do
-              echo "| ${c} | | |" >> TEST_README.md
+              echo -E "\| \`${c}\` \| `hello` \| `world` \|" >> TEST_README.md
           done
 
       - name: Try commit
