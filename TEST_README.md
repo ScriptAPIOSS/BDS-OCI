@@ -1,38 +1,38 @@
 
 | Property | ENV | ARGS |
 | -------- | --- | ---- |
-\| `allow-cheats` \|  \|  \|
-\| `allow-list` \|  \|  \|
-\| `chat-restriction` \|  \|  \|
-\| `client-side-chunk-generation-enabled` \|  \|  \|
-\| `compression-algorithm` \|  \|  \|
-\| `compression-threshold` \|  \|  \|
-\| `content-log-file-enabled` \|  \|  \|
-\| `correct-player-movement` \|  \|  \|
-\| `default-player-permission-level` \|  \|  \|
-\| `difficulty` \|  \|  \|
-\| `disable-player-interaction` \|  \|  \|
-\| `emit-server-telemetry` \|  \|  \|
-\| `enable-lan-visibility` \|  \|  \|
-\| `force-gamemode` \|  \|  \|
-\| `gamemode` \|  \|  \|
-\| `level-name` \|  \|  \|
-\| `level-seed` \|  \|  \|
-\| `level-type` \|  \|  \|
-\| `max-players` \|  \|  \|
-\| `max-threads` \|  \|  \|
-\| `online-mode` \|  \|  \|
-\| `player-idle-timeout` \|  \|  \|
-\| `player-movement-action-direction-threshold` \|  \|  \|
-\| `player-movement-distance-threshold` \|  \|  \|
-\| `player-movement-duration-threshold-in-ms` \|  \|  \|
-\| `player-movement-score-threshold` \|  \|  \|
-\| `server-authoritative-block-breaking` \|  \|  \|
-\| `server-authoritative-movement` \|  \|  \|
-\| `server-name` \|  \|  \|
-\| `server-port` \|  \|  \|
-\| `server-portv6` \|  \|  \|
-\| `texturepack-required` \|  \|  \|
-\| `tick-distance` \|  \|  \|
-\| `view-distance` \|  \|  \|
-\| `white-list` \|  \|  \|
+| `allow-cheats` | `hello` | `world` |
+| `allow-list` | `hello` | `world` |
+| `chat-restriction` | `hello` | `world` |
+| `client-side-chunk-generation-enabled` | `hello` | `world` |
+| `compression-algorithm` | `hello` | `world` |
+| `compression-threshold` | `hello` | `world` |
+| `content-log-file-enabled` | `hello` | `world` |
+| `correct-player-movement` | `hello` | `world` |
+| `default-player-permission-level` | `hello` | `world` |
+| `difficulty` | `hello` | `world` |
+| `disable-player-interaction` | `hello` | `world` |
+| `emit-server-telemetry` | `hello` | `world` |
+| `enable-lan-visibility` | `hello` | `world` |
+| `force-gamemode` | `hello` | `world` |
+| `gamemode` | `hello` | `world` |
+| `level-name` | `hello` | `world` |
+| `level-seed` | `hello` | `world` |
+| `level-type` | `hello` | `world` |
+| `max-players` | `hello` | `world` |
+| `max-threads` | `hello` | `world` |
+| `online-mode` | `hello` | `world` |
+| `player-idle-timeout` | `hello` | `world` |
+| `player-movement-action-direction-threshold` | `hello` | `world` |
+| `player-movement-distance-threshold` | `hello` | `world` |
+| `player-movement-duration-threshold-in-ms` | `hello` | `world` |
+| `player-movement-score-threshold` | `hello` | `world` |
+| `server-authoritative-block-breaking` | `hello` | `world` |
+| `server-authoritative-movement` | `hello` | `world` |
+| `server-name` | `hello` | `world` |
+| `server-port` | `hello` | `world` |
+| `server-portv6` | `hello` | `world` |
+| `texturepack-required` | `hello` | `world` |
+| `tick-distance` | `hello` | `world` |
+| `view-distance` | `hello` | `world` |
+| `white-list` | `hello` | `world` |
