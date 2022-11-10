@@ -25,8 +25,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>ALLOW_CHEATS</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> allow-list </td>
@@ -34,8 +34,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>ALLOW_LIST</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> chat-restriction </td>
@@ -43,9 +43,9 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>CHAT_RESTRICTION</code>
 </td>
 <td>
-<ul><li><code>None</code></li>
-<li><code>Dropped</code></li>
-<li><code>Disabled</code></li></ul>
+<code>None</code><br>
+<code>Dropped</code><br>
+<code>Disabled</code><br>
 </td>
 </tr>
 <tr><td> client-side-chunk-generation-enabled </td>
@@ -53,8 +53,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>CLIENT_SIDE_CHUNK_GENERATION_ENABLED</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> compression-algorithm </td>
@@ -62,8 +62,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>COMPRESSION_ALGORITHM</code>
 </td>
 <td>
-<ul><li><code>zlib</code></li>
-<li><code>snappy</code></li></ul>
+<code>zlib</code><br>
+<code>snappy</code><br>
 </td>
 </tr>
 <tr><td> compression-threshold </td>
@@ -71,7 +71,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>COMPRESSION_THRESHOLD</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> content-log-file-enabled </td>
@@ -79,8 +79,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>CONTENT_LOG_FILE_ENABLED</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> correct-player-movement </td>
@@ -88,8 +88,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>CORRECT_PLAYER_MOVEMENT</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> default-player-permission-level </td>
@@ -97,9 +97,9 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>DEFAULT_PLAYER_PERMISSION_LEVEL</code>
 </td>
 <td>
-<ul><li><code>visitor</code></li>
-<li><code>member</code></li>
-<li><code>operator</code></li></ul>
+<code>visitor</code><br>
+<code>member</code><br>
+<code>operator</code><br>
 </td>
 </tr>
 <tr><td> difficulty </td>
@@ -107,10 +107,10 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>DIFFICULTY</code>
 </td>
 <td>
-<ul><li><code>easy</code></li>
-<li><code>peaceful</code></li>
-<li><code>normal</code></li>
-<li><code>hard</code></li></ul>
+<code>easy</code><br>
+<code>peaceful</code><br>
+<code>normal</code><br>
+<code>hard</code><br>
 </td>
 </tr>
 <tr><td> disable-player-interaction </td>
@@ -118,8 +118,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>DISABLE_PLAYER_INTERACTION</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> emit-server-telemetry </td>
@@ -127,8 +127,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>EMIT_SERVER_TELEMETRY</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> enable-lan-visibility </td>
@@ -136,8 +136,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>ENABLE_LAN_VISIBILITY</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> force-gamemode </td>
@@ -145,8 +145,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>FORCE_GAMEMODE</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> gamemode </td>
@@ -154,9 +154,9 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>GAMEMODE</code>
 </td>
 <td>
-<ul><li><code>survival</code></li>
-<li><code>creative</code></li>
-<li><code>adventure</code></li></ul>
+<code>survival</code><br>
+<code>creative</code><br>
+<code>adventure</code><br>
 </td>
 </tr>
 <tr><td> level-name </td>
@@ -164,7 +164,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>LEVEL_NAME</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> level-seed </td>
@@ -172,7 +172,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>LEVEL_SEED</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> level-type </td>
@@ -180,9 +180,9 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>LEVEL_TYPE</code>
 </td>
 <td>
-<ul><li><code>DEFAULT</code></li>
-<li><code>FLAT</code></li>
-<li><code>LEGACY</code></li></ul>
+<code>DEFAULT</code><br>
+<code>FLAT</code><br>
+<code>LEGACY</code><br>
 </td>
 </tr>
 <tr><td> max-players </td>
@@ -190,7 +190,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>MAX_PLAYERS</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> max-threads </td>
@@ -198,7 +198,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>MAX_THREADS</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> online-mode </td>
@@ -206,8 +206,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>ONLINE_MODE</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> player-idle-timeout </td>
@@ -215,7 +215,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>PLAYER_IDLE_TIMEOUT</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> player-movement-action-direction-threshold </td>
@@ -223,7 +223,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> player-movement-distance-threshold </td>
@@ -231,7 +231,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>PLAYER_MOVEMENT_DISTANCE_THRESHOLD</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> player-movement-duration-threshold-in-ms </td>
@@ -239,7 +239,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> player-movement-score-threshold </td>
@@ -247,7 +247,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>PLAYER_MOVEMENT_SCORE_THRESHOLD</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> server-authoritative-block-breaking </td>
@@ -255,8 +255,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>SERVER_AUTHORITATIVE_BLOCK_BREAKING</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> server-authoritative-movement </td>
@@ -264,9 +264,9 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>SERVER_AUTHORITATIVE_MOVEMENT</code>
 </td>
 <td>
-<ul><li><code>server-auth</code></li>
-<li><code>client-auth</code></li>
-<li><code>server-auth-with-rewind</code></li></ul>
+<code>server-auth</code><br>
+<code>client-auth</code><br>
+<code>server-auth-with-rewind</code><br>
 </td>
 </tr>
 <tr><td> server-name </td>
@@ -274,7 +274,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>SERVER_NAME</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> server-port </td>
@@ -282,7 +282,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>SERVER_PORT</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> server-portv6 </td>
@@ -290,7 +290,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>SERVER_PORT_V6</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> texturepack-required </td>
@@ -298,8 +298,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>TEXTUREPACK_REQUIRED</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 <tr><td> tick-distance </td>
@@ -307,7 +307,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>TICK_DISTANCE</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> view-distance </td>
@@ -315,7 +315,7 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>VIEW_DISTANCE</code>
 </td>
 <td>
-<ul></ul>
+
 </td>
 </tr>
 <tr><td> white-list </td>
@@ -323,8 +323,8 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 <code>WHITE_LIST</code>
 </td>
 <td>
-<ul><li><code>true</code></li>
-<li><code>false</code></li></ul>
+<code>true</code><br>
+<code>false</code><br>
 </td>
 </tr>
 </table>
