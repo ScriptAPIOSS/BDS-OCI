@@ -17,6 +17,7 @@ jobs:
         run: |
           echo "" > TEST_README.md
           echo "| Property | ENV | ARGS |" >> TEST_README.md
+          echo "| -------- | --- | ---- |" >> TEST_README.md
 
           for c in `cat property-definitions.json | jq -r 'keys[]'`
           do
