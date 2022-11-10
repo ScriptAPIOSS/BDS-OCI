@@ -13,16 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Just do it
-        run: |
-          echo "" > TEST_README.md
-          echo "| Property | ENV | ARGS |" >> TEST_README.md
-          echo "| -------- | --- | ---- |" >> TEST_README.md
-
-          for c in `cat property-definitions.json | jq -r 'keys[]'`
-          do
-              echo -E "| \`${c}\` | \`hello\` | \`world\` |" >> TEST_README.md
-          done
+      - name: Run readme.sh
+        run: ./readme.sh
 
       - name: Try commit
         uses: EndBug/add-and-commit@v9
