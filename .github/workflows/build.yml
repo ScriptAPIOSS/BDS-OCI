@@ -1,4 +1,4 @@
-name: Build
+name: Build OCI image
 run-name: Build Image [${{ inputs.BDS_VERSION }}]
 on:
   workflow_dispatch:
