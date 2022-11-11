@@ -2,8 +2,6 @@
 
 rm README.md
 
-echo "# Minecraft BDS versions" >> README.md
-
 echo "" >> README.md
 cat ./README/header.md >> README.md
 echo "" >> README.md
