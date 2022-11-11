@@ -1,7 +1,17 @@
 {
+  "emit-server-telemetry": {
+    "env": "EMIT_SERVER_TELEMETRY",
+    "type": "bool",
+    "allowed": [
+      "true",
+      "false"
+    ],
+    "hidden": false
+  },
   "server-name": {
     "env": "SERVER_NAME",
-    "type": "string"
+    "type": "string",
+    "hidden": false
   },
   "gamemode": {
     "env": "GAMEMODE",
@@ -15,7 +25,8 @@
       "0": "survival",
       "1": "creative",
       "2": "adventure"
-    }
+    },
+    "hidden": false
   },
   "force-gamemode": {
     "env": "FORCE_GAMEMODE",
@@ -23,7 +34,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "difficulty": {
     "env": "DIFFICULTY",
@@ -39,7 +51,8 @@
       "1": "easy",
       "2": "normal",
       "3": "hard"
-    }
+    },
+    "hidden": false
   },
   "allow-cheats": {
     "env": "ALLOW_CHEATS",
@@ -47,11 +60,13 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "max-players": {
     "env": "MAX_PLAYERS",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "online-mode": {
     "env": "ONLINE_MODE",
@@ -59,7 +74,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "allow-list": {
     "env": "ALLOW_LIST",
@@ -67,15 +83,18 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "server-port": {
     "env": "SERVER_PORT",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "server-portv6": {
     "env": "SERVER_PORT_V6",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "enable-lan-visibility": {
     "env": "ENABLE_LAN_VISIBILITY",
@@ -83,33 +102,40 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "view-distance": {
     "env": "VIEW_DISTANCE",
     "type": "int32",
-    "note": "must be larger than 5"
+    "note": "must be larger than 5",
+    "hidden": false
   },
   "tick-distance": {
     "env": "TICK_DISTANCE",
     "type": "int32",
-    "note": "must be between 4 and 12 inclusive"
+    "note": "must be between 4 and 12 inclusive",
+    "hidden": false
   },
   "player-idle-timeout": {
     "env": "PLAYER_IDLE_TIMEOUT",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "max-threads": {
     "env": "MAX_THREADS",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "level-name": {
     "env": "LEVEL_NAME",
-    "type": "string"
+    "type": "string",
+    "hidden": false
   },
   "level-seed": {
     "env": "LEVEL_SEED",
-    "type": "string"
+    "type": "string",
+    "hidden": false
   },
   "default-player-permission-level": {
     "env": "DEFAULT_PLAYER_PERMISSION_LEVEL",
@@ -118,7 +144,8 @@
       "visitor",
       "member",
       "operator"
-    ]
+    ],
+    "hidden": false
   },
   "texturepack-required": {
     "env": "TEXTUREPACK_REQUIRED",
@@ -126,7 +153,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "content-log-file-enabled": {
     "env": "CONTENT_LOG_FILE_ENABLED",
@@ -134,11 +162,13 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "compression-threshold": {
     "env": "COMPRESSION_THRESHOLD",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "compression-algorithm": {
     "env": "COMPRESSION_ALGORITHM",
@@ -146,7 +176,8 @@
     "allowed": [
       "zlib",
       "snappy"
-    ]
+    ],
+    "hidden": false
   },
   "server-authoritative-movement": {
     "env": "SERVER_AUTHORITATIVE_MOVEMENT",
@@ -159,23 +190,28 @@
     "mappings": {
       "true": "server-auth",
       "false": "client-auth"
-    }
+    },
+    "hidden": false
   },
   "player-movement-score-threshold": {
     "env": "PLAYER_MOVEMENT_SCORE_THRESHOLD",
-    "type": "float"
+    "type": "float",
+    "hidden": false
   },
   "player-movement-action-direction-threshold": {
     "env": "PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD",
-    "type": "float"
+    "type": "float",
+    "hidden": false
   },
   "player-movement-distance-threshold": {
     "env": "PLAYER_MOVEMENT_DISTANCE_THRESHOLD",
-    "type": "float"
+    "type": "float",
+    "hidden": false
   },
   "player-movement-duration-threshold-in-ms": {
     "env": "PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS",
-    "type": "int32"
+    "type": "int32",
+    "hidden": false
   },
   "correct-player-movement": {
     "env": "CORRECT_PLAYER_MOVEMENT",
@@ -183,7 +219,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "server-authoritative-block-breaking": {
     "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING",
@@ -191,7 +228,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "chat-restriction": {
     "env": "CHAT_RESTRICTION",
@@ -200,7 +238,8 @@
       "None",
       "Dropped",
       "Disabled"
-    ]
+    ],
+    "hidden": false
   },
   "disable-player-interaction": {
     "env": "DISABLE_PLAYER_INTERACTION",
@@ -208,7 +247,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "client-side-chunk-generation-enabled": {
     "env": "CLIENT_SIDE_CHUNK_GENERATION_ENABLED",
@@ -216,7 +256,8 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": false
   },
   "level-type": {
     "env": "LEVEL_TYPE",
@@ -230,7 +271,8 @@
       "flat": "FLAT",
       "legacy": "LEGACY",
       "default": "DEFAULT"
-    }
+    },
+    "hidden": true
   },
   "white-list": {
     "env": "WHITE_LIST",
@@ -238,14 +280,216 @@
     "allowed": [
       "true",
       "false"
-    ]
+    ],
+    "hidden": true
   },
-  "emit-server-telemetry": {
-    "env": "EMIT_SERVER_TELEMETRY",
+  "op-permission-level": {
+    "env": "OP_PERMISSION_LEVEL",
+    "type": "int32",
+    "hidden": true
+  },
+  "wserver-retry-time": {
+    "env": "WSERVER_RETRY_TIME",
+    "type": "float",
+    "hidden": true
+  },
+  "wsserver-encryption": {
+    "env": "WSSERVER_ENCRYPTION",
     "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ]
+    "hidden": true
+  },
+  "trusted-key": {
+    "env": "TRUSTED_KEY",
+    "type": "string",
+    "hidden": true
+  },
+  "msa-gamertags-only": {
+    "env": "MSA_GAMERTAGS_ONLY",
+    "type": "bool",
+    "hidden": true
+  },
+  "enable-item-stack-net-manager-deprecated": {
+    "env": "ENABLE_ITEM_STACK_NET_MANAGER_DEPRECATED",
+    "type": "bool",
+    "hidden": true
+  },
+  "item-transaction-logging-enabled": {
+    "env": "ITEM_TRANSACTION_LOGGING_ENABLED",
+    "type": "bool",
+    "hidden": true
+  },
+  "language": {
+    "env": "LANGUAGE",
+    "type": "string",
+    "hidden": true
+  },
+  "server-id": {
+    "env": "SERVER_ID",
+    "type": "string",
+    "hidden": true
+  },
+  "server-wakeup-frequency": {
+    "env": "SERVER_WAKEUP_FREQUENCY",
+    "type": "int32",
+    "hidden": true
+  },
+  "remote-server-communication-endpoint": {
+    "env": "REMOTE_SERVER_COMMUNICATION_ENDPOINT",
+    "type": "string",
+    "hidden": true,
+    "note": "some sort of url / domain port combo"
+  },
+  "clacks-endpoint": {
+    "env": "CLACKS_ENDPOINT",
+    "type": "string",
+    "hidden": true,
+    "note": "some sort of url / domain port combo"
+  },
+  "server-authoritative-block-breaking-pick-range-scalar": {
+    "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING_PICK_RANGE_SCALAR",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-position-threshold": {
+    "env": "PLAYER_REWIND_POSITION_THRESHOLD",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-position-acceptance": {
+    "env": "PLAYER_REWIND_POSITION_ACCEPTANCE",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-position-persuasion": {
+    "env": "PLAYER_REWIND_POSITION_PERSUASION",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-velocity-threshold": {
+    "env": "PLAYER_REWIND_VELOCITY_THRESHOLD",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-unsupported-position-threshold": {
+    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_THRESHOLD",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-unsupported-velocity-threshold": {
+    "env": "PLAYER_REWIND_UNSUPPORTED_VELOCITY_THRESHOLD",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-unsupported-position-acceptance": {
+    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_ACCEPTANCE",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-unsupported-position-persuasion": {
+    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_PERSUASION",
+    "type": "float",
+    "hidden": true
+  },
+  "player-rewind-min-correction-delay-ticks": {
+    "env": "PLAYER_REWIND_MIN_CORRECTION_DELAY_TICKS",
+    "type": "int32",
+    "hidden": true
+  },
+  "player-rewind-history-size-ticks": {
+    "env": "PLAYER_REWIND_HISTORY_SIZE_TICKS",
+    "type": "int32",
+    "hidden": true
+  },
+  "player-tick-policy": {
+    "env": "PLAYER_TICK_POLICY",
+    "type": "string",
+    "hidden": true
+  },
+  "player-tick-throttled-input-batch-size": {
+    "env": "PLAYER_TICK_THROTTLED_INPUT_BATCH_SIZE",
+    "type": "int32",
+    "hidden": true
+  },
+  "player-tick-throttled-max-tick-credits": {
+    "env": "PLAYER_TICK_THROTTLED_MAX_TICK_CREDITS",
+    "type": "int32",
+    "hidden": true
+  },
+  "allow-outbound-script-debugging": {
+    "env": "ALLOW_OUTBOUND_SCRIPT_DEBUGGING",
+    "type": "bool",
+    "hidden": true
+  },
+  "allow-inbound-script-debugging": {
+    "env": "ALLOW_INBOUND_SCRIPT_DEBUGGING",
+    "type": "bool",
+    "hidden": true
+  },
+  "force-inbound-debug-port": {
+    "env": "FORCE_INBOUND_DEBUG_PORT",
+    "type": "int32",
+    "hidden": true
+  },
+  "script-watchdog-enable": {
+    "env": "SCRIPT_WATCHDOG_ENABLE",
+    "type": "bool",
+    "hidden": true
+  },
+  "script-watchdog-enable-exception-handling": {
+    "env": "SCRIPT_WATCHDOG_ENABLE_EXCEPTION_HANDLING",
+    "type": "bool",
+    "hidden": true
+  },
+  "script-watchdog-enable-shutdown": {
+    "env": "SCRIPT_WATCHDOG_ENABLE_SHUTDOWN",
+    "type": "bool",
+    "hidden": true
+  },
+  "script-watchdog-hang-exception": {
+    "env": "SCRIPT_WATCHDOG_HANG_EXCEPTION",
+    "type": "bool",
+    "hidden": true
+  },
+  "script-watchdog-hang-threshold": {
+    "env": "SCRIPT_WATCHDOG_HANG_THRESHOLD",
+    "type": "int32",
+    "hidden": true
+  },
+  "script-watchdog-spike-threshold": {
+    "env": "SCRIPT_WATCHDOG_SPIKE_THRESHOLD",
+    "type": "int32",
+    "hidden": true
+  },
+  "script-watchdog-slow-threshold": {
+    "env": "SCRIPT_WATCHDOG_SLOW_THRESHOLD",
+    "type": "int32",
+    "hidden": true
+  },
+  "script-watchdog-memory-warning": {
+    "env": "SCRIPT_WATCHDOG_MEMORY_WARNING",
+    "type": "int32",
+    "hidden": true,
+    "note": "must be higher than 2000"
+  },
+  "script-watchdog-memory-limit": {
+    "env": "SCRIPT_WATCHDOG_MEMORY_LIMIT",
+    "type": "int32",
+    "hidden": true,
+    "note": "must be higher than 2000"
+  },
+  "enable-script": {
+    "env": "ENABLE_SCRIPT",
+    "type": "bool",
+    "hidden": true
+  },
+  "disable-persona": {
+    "env": "DISABLE_PERSONA",
+    "type": "bool",
+    "hidden": true
+  },
+  "disable-custom-skins": {
+    "env": "DISABLE_CUSTOM_SKINS",
+    "type": "bool",
+    "hidden": true
   }
 }
