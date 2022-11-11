@@ -1,4 +1,3 @@
-# Minecraft BDS versions
 
 # BDS-OCI
 
