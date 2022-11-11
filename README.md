@@ -18,6 +18,13 @@ podman run -it -e EULA_ACCEPT=true -e PP_ACCEPT=true ghcr.io/scriptapioss/bedroc
 
 ## Properties
 
+This is a list of all server properties and the corresponding
+environment variable to configure it. Some take specific
+configuration, while others are freeform and will accept any string.
+Not some values should be ranges. You can see notes on these
+values and some undocumented (but still configurable) settings
+in the `property-definitions.json` file.
+
 <table>
   <tr><th><strong>Property Name</strong></th><th><strong>ENV</strong></th><th><strong>Type</strong></th><th><strong>Enums</strong></th></tr>
 <tr><td>emit-server-telemetry</td><td><code>EMIT_SERVER_TELEMETRY</code></td><td>bool</td><td><code>true</code><br>
