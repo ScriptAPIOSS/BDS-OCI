@@ -120,7 +120,7 @@ jobs:
 
       - name:
         run: |
-          BDS_CHANGELOG=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/changelogs/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.txt`
+          BDS_CHANGELOG=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/release_notes/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.txt`
           echo "${BDS_CHANGELOG}"
 
       - name: Buildah Action
