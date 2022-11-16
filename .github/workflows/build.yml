@@ -129,7 +129,7 @@ jobs:
           build-args: |
             BDS_VERSION=${{ inputs.BDS_VERSION }}
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
-          oci: true
+          # oci: true
 
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
