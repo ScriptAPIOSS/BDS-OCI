@@ -139,7 +139,7 @@ jobs:
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
           labels: |
             org.opencontainers.image.title=Minecraft Bedrock Dedicated Server
-            # org.opencontainers.image.description=${{ env.BDS_CHANGELOG }}
+            org.opencontainers.image.description=${{ env.BDS_CHANGELOG }}
             org.opencontainers.image.version=${{ inputs.BDS_VERSION }}
             org.opencontainers.image.licenses=https://minecraft.net/terms WITH https://go.microsoft.com/fwlink/?LinkId=521839
           oci: true
