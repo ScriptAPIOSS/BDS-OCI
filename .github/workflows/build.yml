@@ -121,7 +121,7 @@ jobs:
       - name:
         run: |
           BDS_CHANGELOG=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/release_notes/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.txt`
-          echo "${BDS_CHANGELOG}"
+          echo "BDS_CHANGELOG=${BDS_CHANGELOG}" >> $GITHUB_ENV
 
       - name: Buildah Action
         id: build_image
@@ -134,6 +134,11 @@ jobs:
           build-args: |
             BDS_VERSION=${{ inputs.BDS_VERSION }}
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
+          labels: |
+            org.opencontainers.image.title=Minecraft Bedrock Dedicated Server
+            org.opencontainers.image.description=${{ env.BDS_CHANGELOG }}
+            org.opencontainers.image.version=${{ inputs.BDS_VERSION }}
+            org.opencontainers.image.licenses=https://minecraft.net/terms WITH https://go.microsoft.com/fwlink/?LinkId=521839
           oci: true
 
       - name: Push To GHCR
