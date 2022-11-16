@@ -121,7 +121,10 @@ jobs:
       - name:
         run: |
           BDS_CHANGELOG=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/release_notes/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.txt`
-          # echo "BDS_CHANGELOG=${BDS_CHANGELOG}" >> $GITHUB_ENV
+          BDS_CHANGELOG="${BDS_CHANGELOG//'%'/'%25'}"
+          BDS_CHANGELOG="${BDS_CHANGELOG//$'\n'/'%0A'}"
+          BDS_CHANGELOG="${BDS_CHANGELOG//$'\r'/'%0D'}"
+          echo "BDS_CHANGELOG=${BDS_CHANGELOG}" >> $GITHUB_ENV
 
       - name: Buildah Action
         id: build_image
