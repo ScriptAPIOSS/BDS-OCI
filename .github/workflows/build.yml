@@ -129,7 +129,9 @@ jobs:
           build-args: |
             BDS_VERSION=${{ inputs.BDS_VERSION }}
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
-          # oci: true
+          labels: |
+            org.opencontainers.image.description="See https://www.minecraft.net/en-us/download/server/bedrock for EULA & Privacy Policy"
+          oci: true
 
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
