@@ -118,14 +118,6 @@ jobs:
           echo "PREVIEW_TAG=preview" >> $GITHUB_ENV
           echo "PATH_MODIFIER=_preview" >> $GITHUB_ENV
 
-      - name:
-        run: |
-          BDS_CHANGELOG=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions/main/release_notes/linux${{ env.PATH_MODIFIER }}/${{ inputs.BDS_VERSION }}.txt`
-          BDS_CHANGELOG="${BDS_CHANGELOG//'%'/'%25'}"
-          BDS_CHANGELOG="${BDS_CHANGELOG//$'\n'/'%0A'}"
-          BDS_CHANGELOG="${BDS_CHANGELOG//$'\r'/'%0D'}"
-          echo "BDS_CHANGELOG=${BDS_CHANGELOG}" >> $GITHUB_ENV
-
       - name: Buildah Action
         id: build_image
         uses: redhat-actions/buildah-build@v2
@@ -138,10 +130,7 @@ jobs:
             BDS_VERSION=${{ inputs.BDS_VERSION }}
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
           labels: |
-            org.opencontainers.image.title=Minecraft Bedrock Dedicated Server
-            org.opencontainers.image.description=${{ env.BDS_CHANGELOG }}
-            org.opencontainers.image.version=${{ inputs.BDS_VERSION }}
-            org.opencontainers.image.licenses=https://minecraft.net/terms WITH https://go.microsoft.com/fwlink/?LinkId=521839
+            org.opencontainers.image.description=See https://www.minecraft.net/en-us/download/server/bedrock for EULA & Privacy Policy
           oci: true
 
       - name: Push To GHCR
