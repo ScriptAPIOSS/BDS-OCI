@@ -32,6 +32,8 @@ RUN rm bds.zip bedrock_server_* release-notes.txt
 
 FROM ubuntu:jammy-20220815
 
+LABEL org.opencontainers.image.description="See https://www.minecraft.net/en-us/download/server/bedrock for EULA & Privacy Policy"
+
 ENV LD_LIBRARY_PATH=./additional_libs/
 
 EXPOSE "19132/udp"
