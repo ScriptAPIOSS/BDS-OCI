@@ -59,4 +59,4 @@ USER 10001:0
 
 VOLUME /bedrock-server/worlds /bedrock-server/configs
 
-CMD ["/opt/entry.sh"]
+ENTRYPOINT ["/opt/entry.sh"]
