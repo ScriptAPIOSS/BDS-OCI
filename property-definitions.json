@@ -1,495 +1,527 @@
 {
-  "emit-server-telemetry": {
-    "env": "EMIT_SERVER_TELEMETRY",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "server-name": {
-    "env": "SERVER_NAME",
-    "type": "string",
-    "hidden": false
-  },
-  "gamemode": {
-    "env": "GAMEMODE",
-    "type": "string",
-    "allowed": [
-      "survival",
-      "creative",
-      "adventure"
-    ],
-    "mappings": {
-      "0": "survival",
-      "1": "creative",
-      "2": "adventure"
+    "allow-cheats": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "ALLOW_CHEATS",
+        "hidden": false,
+        "type": "bool"
     },
-    "hidden": false
-  },
-  "force-gamemode": {
-    "env": "FORCE_GAMEMODE",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "difficulty": {
-    "env": "DIFFICULTY",
-    "type": "string",
-    "allowed": [
-      "easy",
-      "peaceful",
-      "normal",
-      "hard"
-    ],
-    "mappings": {
-      "0": "peaceful",
-      "1": "easy",
-      "2": "normal",
-      "3": "hard"
+    "allow-inbound-script-debugging": {
+        "env": "ALLOW_INBOUND_SCRIPT_DEBUGGING",
+        "hidden": true,
+        "type": "bool"
     },
-    "hidden": false
-  },
-  "allow-cheats": {
-    "env": "ALLOW_CHEATS",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "max-players": {
-    "env": "MAX_PLAYERS",
-    "type": "int32",
-    "hidden": false
-  },
-  "online-mode": {
-    "env": "ONLINE_MODE",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "allow-list": {
-    "env": "ALLOW_LIST",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "server-port": {
-    "env": "SERVER_PORT",
-    "type": "int32",
-    "hidden": false
-  },
-  "server-portv6": {
-    "env": "SERVER_PORT_V6",
-    "type": "int32",
-    "hidden": false
-  },
-  "enable-lan-visibility": {
-    "env": "ENABLE_LAN_VISIBILITY",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "view-distance": {
-    "env": "VIEW_DISTANCE",
-    "type": "int32",
-    "note": "must be larger than 5",
-    "hidden": false
-  },
-  "tick-distance": {
-    "env": "TICK_DISTANCE",
-    "type": "int32",
-    "note": "must be between 4 and 12 inclusive",
-    "hidden": false
-  },
-  "player-idle-timeout": {
-    "env": "PLAYER_IDLE_TIMEOUT",
-    "type": "int32",
-    "hidden": false
-  },
-  "max-threads": {
-    "env": "MAX_THREADS",
-    "type": "int32",
-    "hidden": false
-  },
-  "level-name": {
-    "env": "LEVEL_NAME",
-    "type": "string",
-    "hidden": false
-  },
-  "level-seed": {
-    "env": "LEVEL_SEED",
-    "type": "string",
-    "hidden": false
-  },
-  "default-player-permission-level": {
-    "env": "DEFAULT_PLAYER_PERMISSION_LEVEL",
-    "type": "string",
-    "allowed": [
-      "visitor",
-      "member",
-      "operator"
-    ],
-    "hidden": false
-  },
-  "texturepack-required": {
-    "env": "TEXTUREPACK_REQUIRED",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "content-log-file-enabled": {
-    "env": "CONTENT_LOG_FILE_ENABLED",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "compression-threshold": {
-    "env": "COMPRESSION_THRESHOLD",
-    "type": "int32",
-    "hidden": false
-  },
-  "compression-algorithm": {
-    "env": "COMPRESSION_ALGORITHM",
-    "type": "string",
-    "allowed": [
-      "zlib",
-      "snappy"
-    ],
-    "hidden": false
-  },
-  "server-authoritative-movement": {
-    "env": "SERVER_AUTHORITATIVE_MOVEMENT",
-    "type": "string",
-    "allowed": [
-      "server-auth",
-      "client-auth",
-      "server-auth-with-rewind"
-    ],
-    "mappings": {
-      "true": "server-auth",
-      "false": "client-auth"
+    "allow-list": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "ALLOW_LIST",
+        "hidden": false,
+        "note": "If true then all connected players must be listed in the separate allowlist.json file.",
+        "type": "bool"
     },
-    "hidden": false
-  },
-  "player-movement-score-threshold": {
-    "env": "PLAYER_MOVEMENT_SCORE_THRESHOLD",
-    "type": "float",
-    "hidden": false
-  },
-  "player-movement-action-direction-threshold": {
-    "env": "PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD",
-    "type": "float",
-    "hidden": false
-  },
-  "player-movement-distance-threshold": {
-    "env": "PLAYER_MOVEMENT_DISTANCE_THRESHOLD",
-    "type": "float",
-    "hidden": false
-  },
-  "player-movement-duration-threshold-in-ms": {
-    "env": "PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS",
-    "type": "int32",
-    "hidden": false
-  },
-  "correct-player-movement": {
-    "env": "CORRECT_PLAYER_MOVEMENT",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "server-authoritative-block-breaking": {
-    "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "chat-restriction": {
-    "env": "CHAT_RESTRICTION",
-    "type": "string",
-    "allowed": [
-      "None",
-      "Dropped",
-      "Disabled"
-    ],
-    "hidden": false
-  },
-  "disable-player-interaction": {
-    "env": "DISABLE_PLAYER_INTERACTION",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "client-side-chunk-generation-enabled": {
-    "env": "CLIENT_SIDE_CHUNK_GENERATION_ENABLED",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": false
-  },
-  "level-type": {
-    "env": "LEVEL_TYPE",
-    "type": "string",
-    "allowed": [
-      "DEFAULT",
-      "FLAT",
-      "LEGACY"
-    ],
-    "mappings": {
-      "flat": "FLAT",
-      "legacy": "LEGACY",
-      "default": "DEFAULT"
+    "allow-outbound-script-debugging": {
+        "env": "ALLOW_OUTBOUND_SCRIPT_DEBUGGING",
+        "hidden": true,
+        "type": "bool"
     },
-    "hidden": true
-  },
-  "white-list": {
-    "env": "WHITE_LIST",
-    "type": "bool",
-    "allowed": [
-      "true",
-      "false"
-    ],
-    "hidden": true
-  },
-  "op-permission-level": {
-    "env": "OP_PERMISSION_LEVEL",
-    "type": "int32",
-    "hidden": true
-  },
-  "wserver-retry-time": {
-    "env": "WSERVER_RETRY_TIME",
-    "type": "float",
-    "hidden": true
-  },
-  "wsserver-encryption": {
-    "env": "WSSERVER_ENCRYPTION",
-    "type": "bool",
-    "hidden": true
-  },
-  "trusted-key": {
-    "env": "TRUSTED_KEY",
-    "type": "string",
-    "hidden": true
-  },
-  "msa-gamertags-only": {
-    "env": "MSA_GAMERTAGS_ONLY",
-    "type": "bool",
-    "hidden": true
-  },
-  "enable-item-stack-net-manager-deprecated": {
-    "env": "ENABLE_ITEM_STACK_NET_MANAGER_DEPRECATED",
-    "type": "bool",
-    "hidden": true
-  },
-  "item-transaction-logging-enabled": {
-    "env": "ITEM_TRANSACTION_LOGGING_ENABLED",
-    "type": "bool",
-    "hidden": true
-  },
-  "language": {
-    "env": "LANGUAGE",
-    "type": "string",
-    "hidden": true
-  },
-  "server-id": {
-    "env": "SERVER_ID",
-    "type": "string",
-    "hidden": true
-  },
-  "server-wakeup-frequency": {
-    "env": "SERVER_WAKEUP_FREQUENCY",
-    "type": "int32",
-    "hidden": true
-  },
-  "remote-server-communication-endpoint": {
-    "env": "REMOTE_SERVER_COMMUNICATION_ENDPOINT",
-    "type": "string",
-    "hidden": true,
-    "note": "some sort of url / domain port combo"
-  },
-  "clacks-endpoint": {
-    "env": "CLACKS_ENDPOINT",
-    "type": "string",
-    "hidden": true,
-    "note": "some sort of url / domain port combo"
-  },
-  "server-authoritative-block-breaking-pick-range-scalar": {
-    "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING_PICK_RANGE_SCALAR",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-position-threshold": {
-    "env": "PLAYER_REWIND_POSITION_THRESHOLD",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-position-acceptance": {
-    "env": "PLAYER_REWIND_POSITION_ACCEPTANCE",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-position-persuasion": {
-    "env": "PLAYER_REWIND_POSITION_PERSUASION",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-velocity-threshold": {
-    "env": "PLAYER_REWIND_VELOCITY_THRESHOLD",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-unsupported-position-threshold": {
-    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_THRESHOLD",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-unsupported-velocity-threshold": {
-    "env": "PLAYER_REWIND_UNSUPPORTED_VELOCITY_THRESHOLD",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-unsupported-position-acceptance": {
-    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_ACCEPTANCE",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-unsupported-position-persuasion": {
-    "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_PERSUASION",
-    "type": "float",
-    "hidden": true
-  },
-  "player-rewind-min-correction-delay-ticks": {
-    "env": "PLAYER_REWIND_MIN_CORRECTION_DELAY_TICKS",
-    "type": "int32",
-    "hidden": true
-  },
-  "player-rewind-history-size-ticks": {
-    "env": "PLAYER_REWIND_HISTORY_SIZE_TICKS",
-    "type": "int32",
-    "hidden": true
-  },
-  "player-tick-policy": {
-    "env": "PLAYER_TICK_POLICY",
-    "type": "string",
-    "hidden": true
-  },
-  "player-tick-throttled-input-batch-size": {
-    "env": "PLAYER_TICK_THROTTLED_INPUT_BATCH_SIZE",
-    "type": "int32",
-    "hidden": true
-  },
-  "player-tick-throttled-max-tick-credits": {
-    "env": "PLAYER_TICK_THROTTLED_MAX_TICK_CREDITS",
-    "type": "int32",
-    "hidden": true
-  },
-  "allow-outbound-script-debugging": {
-    "env": "ALLOW_OUTBOUND_SCRIPT_DEBUGGING",
-    "type": "bool",
-    "hidden": true
-  },
-  "allow-inbound-script-debugging": {
-    "env": "ALLOW_INBOUND_SCRIPT_DEBUGGING",
-    "type": "bool",
-    "hidden": true
-  },
-  "force-inbound-debug-port": {
-    "env": "FORCE_INBOUND_DEBUG_PORT",
-    "type": "int32",
-    "hidden": true
-  },
-  "script-watchdog-enable": {
-    "env": "SCRIPT_WATCHDOG_ENABLE",
-    "type": "bool",
-    "hidden": true
-  },
-  "script-watchdog-enable-exception-handling": {
-    "env": "SCRIPT_WATCHDOG_ENABLE_EXCEPTION_HANDLING",
-    "type": "bool",
-    "hidden": true
-  },
-  "script-watchdog-enable-shutdown": {
-    "env": "SCRIPT_WATCHDOG_ENABLE_SHUTDOWN",
-    "type": "bool",
-    "hidden": true
-  },
-  "script-watchdog-hang-exception": {
-    "env": "SCRIPT_WATCHDOG_HANG_EXCEPTION",
-    "type": "bool",
-    "hidden": true
-  },
-  "script-watchdog-hang-threshold": {
-    "env": "SCRIPT_WATCHDOG_HANG_THRESHOLD",
-    "type": "int32",
-    "hidden": true
-  },
-  "script-watchdog-spike-threshold": {
-    "env": "SCRIPT_WATCHDOG_SPIKE_THRESHOLD",
-    "type": "int32",
-    "hidden": true
-  },
-  "script-watchdog-slow-threshold": {
-    "env": "SCRIPT_WATCHDOG_SLOW_THRESHOLD",
-    "type": "int32",
-    "hidden": true
-  },
-  "script-watchdog-memory-warning": {
-    "env": "SCRIPT_WATCHDOG_MEMORY_WARNING",
-    "type": "int32",
-    "hidden": true,
-    "note": "must be higher than 2000"
-  },
-  "script-watchdog-memory-limit": {
-    "env": "SCRIPT_WATCHDOG_MEMORY_LIMIT",
-    "type": "int32",
-    "hidden": true,
-    "note": "must be higher than 2000"
-  },
-  "enable-script": {
-    "env": "ENABLE_SCRIPT",
-    "type": "bool",
-    "hidden": true
-  },
-  "disable-persona": {
-    "env": "DISABLE_PERSONA",
-    "type": "bool",
-    "hidden": true
-  },
-  "disable-custom-skins": {
-    "env": "DISABLE_CUSTOM_SKINS",
-    "type": "bool",
-    "hidden": true
-  }
+    "chat-restriction": {
+        "allowed": [
+            "None",
+            "Dropped",
+            "Disabled"
+        ],
+        "env": "CHAT_RESTRICTION",
+        "hidden": false,
+        "note": "This represents the level of restriction applied to the chat for each player that joins the server.\n\"None\" is the default and represents regular free chat. \n\"Dropped\" means the chat messages are dropped and never sent to any client. Players receive a message to let them know the feature is disabled. \n \"Disabled\" means that unless the player is an operator, the chat UI does not even appear. No information is displayed to the player.",
+        "type": "string"
+    },
+    "clacks-endpoint": {
+        "env": "CLACKS_ENDPOINT",
+        "hidden": true,
+        "note": "some sort of url / domain port combo",
+        "type": "string"
+    },
+    "client-side-chunk-generation-enabled": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "CLIENT_SIDE_CHUNK_GENERATION_ENABLED",
+        "hidden": false,
+        "note": "If true, the server will inform clients that they have the ability to generate visual level chunks outside of player interaction distances.",
+        "type": "bool"
+    },
+    "compression-algorithm": {
+        "allowed": [
+            "zlib",
+            "snappy"
+        ],
+        "env": "COMPRESSION_ALGORITHM",
+        "hidden": false,
+        "note": "Determines the compression algorithm to use for networking",
+        "type": "string"
+    },
+    "compression-threshold": {
+        "env": "COMPRESSION_THRESHOLD",
+        "hidden": false,
+        "note": "Determines the smallest size of raw network payload to compress. 0-65535",
+        "type": "int32"
+    },
+    "content-log-file-enabled": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "CONTENT_LOG_FILE_ENABLED",
+        "hidden": false,
+        "note": "Enables logging content errors to a file",
+        "type": "bool"
+    },
+    "correct-player-movement": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "CORRECT_PLAYER_MOVEMENT",
+        "hidden": false,
+        "note": "If true, the client position will get corrected to the server position if the movement score exceeds the threshold.",
+        "type": "bool"
+    },
+    "default-player-permission-level": {
+        "allowed": [
+            "visitor",
+            "member",
+            "operator"
+        ],
+        "env": "DEFAULT_PLAYER_PERMISSION_LEVEL",
+        "hidden": false,
+        "note": "Permission level for new players joining for the first time.",
+        "type": "string"
+    },
+    "difficulty": {
+        "allowed": [
+            "easy",
+            "peaceful",
+            "normal",
+            "hard"
+        ],
+        "env": "DIFFICULTY",
+        "hidden": false,
+        "mappings": {
+            "0": "peaceful",
+            "1": "easy",
+            "2": "normal",
+            "3": "hard"
+        },
+        "note": "Sets the difficulty of the world.",
+        "type": "string"
+    },
+    "disable-custom-skins": {
+        "env": "DISABLE_CUSTOM_SKINS",
+        "hidden": true,
+        "type": "bool"
+    },
+    "disable-persona": {
+        "env": "DISABLE_PERSONA",
+        "hidden": true,
+        "type": "bool"
+    },
+    "disable-player-interaction": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "DISABLE_PLAYER_INTERACTION",
+        "hidden": false,
+        "note": "If true, the server will inform clients that they should ignore other players when interacting with the world. This is not server authoritative.",
+        "type": "bool"
+    },
+    "emit-server-telemetry": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "EMIT_SERVER_TELEMETRY",
+        "hidden": false,
+        "type": "bool"
+    },
+    "enable-item-stack-net-manager-deprecated": {
+        "env": "ENABLE_ITEM_STACK_NET_MANAGER_DEPRECATED",
+        "hidden": true,
+        "type": "bool"
+    },
+    "enable-lan-visibility": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "ENABLE_LAN_VISIBILITY",
+        "hidden": false,
+        "note": "Listen and respond to clients that are looking for servers on the LAN. This will cause the server to bind to the default ports (19132, 19133) even when `server-port` and `server-portv6` have non-default values. Consider turning this off if LAN discovery is not desirable, or when running multiple servers on the same host may lead to port conflicts.",
+        "type": "bool"
+    },
+    "enable-script": {
+        "env": "ENABLE_SCRIPT",
+        "hidden": true,
+        "type": "bool"
+    },
+    "force-gamemode": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "FORCE_GAMEMODE",
+        "hidden": false,
+        "note": "force-gamemode=false (or force-gamemode  is not defined in the server.properties) prevents the server from sending to the client gamemode values other than the gamemode value saved by the server during world creation even if those values are set in server.properties after world creation.\nforce-gamemode=true forces the server to send to the client gamemode values other than the gamemode value saved by the server during world creation if those values are set in server.properties after world creation.",
+        "type": "bool"
+    },
+    "force-inbound-debug-port": {
+        "env": "FORCE_INBOUND_DEBUG_PORT",
+        "hidden": true,
+        "type": "int32"
+    },
+    "gamemode": {
+        "allowed": [
+            "survival",
+            "creative",
+            "adventure"
+        ],
+        "env": "GAMEMODE",
+        "hidden": false,
+        "mappings": {
+            "0": "survival",
+            "1": "creative",
+            "2": "adventure"
+        },
+        "type": "string"
+    },
+    "item-transaction-logging-enabled": {
+        "env": "ITEM_TRANSACTION_LOGGING_ENABLED",
+        "hidden": true,
+        "type": "bool"
+    },
+    "language": {
+        "env": "LANGUAGE",
+        "hidden": true,
+        "type": "string"
+    },
+    "level-name": {
+        "env": "LEVEL_NAME",
+        "hidden": false,
+        "note": "Any string without semicolon symbol or symbols illegal for file name: /\n\r\t\f`?*\\<>|\":",
+        "type": "string"
+    },
+    "level-seed": {
+        "env": "LEVEL_SEED",
+        "hidden": false,
+        "note": "Use to randomize the world seed. Any string",
+        "type": "string"
+    },
+    "level-type": {
+        "allowed": [
+            "DEFAULT",
+            "FLAT",
+            "LEGACY"
+        ],
+        "env": "LEVEL_TYPE",
+        "hidden": true,
+        "mappings": {
+            "default": "DEFAULT",
+            "flat": "FLAT",
+            "legacy": "LEGACY"
+        },
+        "type": "string"
+    },
+    "max-players": {
+        "env": "MAX_PLAYERS",
+        "hidden": false,
+        "note": "The maximum number of players that can play on the server. Any positive integer",
+        "type": "int32"
+    },
+    "max-threads": {
+        "env": "MAX_THREADS",
+        "hidden": false,
+        "note": "Maximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible. Any positive integer.",
+        "type": "int32"
+    },
+    "msa-gamertags-only": {
+        "env": "MSA_GAMERTAGS_ONLY",
+        "hidden": true,
+        "type": "bool"
+    },
+    "online-mode": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "ONLINE_MODE",
+        "hidden": false,
+        "note": "If true then all connected players must be authenticated to Xbox Live. Clients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting. If the server accepts connections from the Internet, then it's highly recommended to enable online-mode.",
+        "type": "bool"
+    },
+    "op-permission-level": {
+        "env": "OP_PERMISSION_LEVEL",
+        "hidden": true,
+        "type": "int32"
+    },
+    "player-idle-timeout": {
+        "env": "PLAYER_IDLE_TIMEOUT",
+        "hidden": false,
+        "note": "After a player has idled for this many minutes they will be kicked. If set to 0 then players can idle indefinitely. Any non-negative integer.",
+        "type": "int32"
+    },
+    "player-movement-action-direction-threshold": {
+        "env": "PLAYER_MOVEMENT_ACTION_DIRECTION_THRESHOLD",
+        "hidden": false,
+        "note": "The amount that the player's attack direction and look direction can differ. Allowed values: Any value in the range of [0, 1] where 1 means that the direction of the players view and the direction the player is attacking must match exactly and a value of 0 means that the two directions can differ by up to and including 90 degrees.",
+        "type": "float"
+    },
+    "player-movement-distance-threshold": {
+        "env": "PLAYER_MOVEMENT_DISTANCE_THRESHOLD",
+        "hidden": false,
+        "note": "The difference between server and client positions that needs to be exceeded before abnormal behavior is detected. Disabled by server-authoritative-movement.",
+        "type": "float"
+    },
+    "player-movement-duration-threshold-in-ms": {
+        "env": "PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS",
+        "hidden": false,
+        "note": "The duration of time the server and client positions can be out of sync (as defined by player-movement-distance-threshold) before the abnormal movement score is incremented. This value is defined in milliseconds. Disabled by server-authoritative-movement.",
+        "type": "int32"
+    },
+    "player-movement-score-threshold": {
+        "env": "PLAYER_MOVEMENT_SCORE_THRESHOLD",
+        "hidden": false,
+        "note": "The number of incongruent time intervals needed before abnormal behavior is reported. Disabled by server-authoritative-movement.",
+        "type": "float"
+    },
+    "player-rewind-history-size-ticks": {
+        "env": "PLAYER_REWIND_HISTORY_SIZE_TICKS",
+        "hidden": true,
+        "type": "int32"
+    },
+    "player-rewind-min-correction-delay-ticks": {
+        "env": "PLAYER_REWIND_MIN_CORRECTION_DELAY_TICKS",
+        "hidden": true,
+        "type": "int32"
+    },
+    "player-rewind-position-acceptance": {
+        "env": "PLAYER_REWIND_POSITION_ACCEPTANCE",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-position-persuasion": {
+        "env": "PLAYER_REWIND_POSITION_PERSUASION",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-position-threshold": {
+        "env": "PLAYER_REWIND_POSITION_THRESHOLD",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-unsupported-position-acceptance": {
+        "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_ACCEPTANCE",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-unsupported-position-persuasion": {
+        "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_PERSUASION",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-unsupported-position-threshold": {
+        "env": "PLAYER_REWIND_UNSUPPORTED_POSITION_THRESHOLD",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-unsupported-velocity-threshold": {
+        "env": "PLAYER_REWIND_UNSUPPORTED_VELOCITY_THRESHOLD",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-rewind-velocity-threshold": {
+        "env": "PLAYER_REWIND_VELOCITY_THRESHOLD",
+        "hidden": true,
+        "type": "float"
+    },
+    "player-tick-policy": {
+        "allowed": [
+            "greedy",
+            "throttled"
+        ],
+        "env": "PLAYER_TICK_POLICY",
+        "hidden": true,
+        "type": "string"
+    },
+    "player-tick-throttled-input-batch-size": {
+        "env": "PLAYER_TICK_THROTTLED_INPUT_BATCH_SIZE",
+        "hidden": true,
+        "type": "int32"
+    },
+    "player-tick-throttled-max-tick-credits": {
+        "env": "PLAYER_TICK_THROTTLED_MAX_TICK_CREDITS",
+        "hidden": true,
+        "type": "int32"
+    },
+    "remote-server-communication-endpoint": {
+        "env": "REMOTE_SERVER_COMMUNICATION_ENDPOINT",
+        "hidden": true,
+        "note": "some sort of url / domain port combo",
+        "type": "string"
+    },
+    "script-watchdog-enable": {
+        "env": "SCRIPT_WATCHDOG_ENABLE",
+        "hidden": true,
+        "type": "bool"
+    },
+    "script-watchdog-enable-exception-handling": {
+        "env": "SCRIPT_WATCHDOG_ENABLE_EXCEPTION_HANDLING",
+        "hidden": true,
+        "type": "bool"
+    },
+    "script-watchdog-enable-shutdown": {
+        "env": "SCRIPT_WATCHDOG_ENABLE_SHUTDOWN",
+        "hidden": true,
+        "type": "bool"
+    },
+    "script-watchdog-hang-exception": {
+        "env": "SCRIPT_WATCHDOG_HANG_EXCEPTION",
+        "hidden": true,
+        "type": "bool"
+    },
+    "script-watchdog-hang-threshold": {
+        "env": "SCRIPT_WATCHDOG_HANG_THRESHOLD",
+        "hidden": true,
+        "type": "int32"
+    },
+    "script-watchdog-memory-limit": {
+        "env": "SCRIPT_WATCHDOG_MEMORY_LIMIT",
+        "hidden": true,
+        "note": "must be higher than 2000",
+        "type": "int32"
+    },
+    "script-watchdog-memory-warning": {
+        "env": "SCRIPT_WATCHDOG_MEMORY_WARNING",
+        "hidden": true,
+        "note": "must be higher than 2000",
+        "type": "int32"
+    },
+    "script-watchdog-slow-threshold": {
+        "env": "SCRIPT_WATCHDOG_SLOW_THRESHOLD",
+        "hidden": true,
+        "type": "int32"
+    },
+    "script-watchdog-spike-threshold": {
+        "env": "SCRIPT_WATCHDOG_SPIKE_THRESHOLD",
+        "hidden": true,
+        "type": "int32"
+    },
+    "server-authoritative-block-breaking": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING",
+        "hidden": false,
+        "note": "If true, the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can.",
+        "type": "bool"
+    },
+    "server-authoritative-block-breaking-pick-range-scalar": {
+        "env": "SERVER_AUTHORITATIVE_BLOCK_BREAKING_PICK_RANGE_SCALAR",
+        "hidden": true,
+        "type": "float"
+    },
+    "server-authoritative-movement": {
+        "allowed": [
+            "server-auth",
+            "client-auth",
+            "server-auth-with-rewind"
+        ],
+        "env": "SERVER_AUTHORITATIVE_MOVEMENT",
+        "hidden": false,
+        "mappings": {
+            "false": "client-auth",
+            "true": "server-auth"
+        },
+        "note": "Enables server authoritative movement. If \"server-auth\", the server will replay local user input on the server and send down corrections when the client's position doesn't match the server's. If server-auth-with-rewind\" is enabled and the server sends a correction, the clients will be instructed to rewind time back to the correction time, apply the correction, then replay all the player's inputs since then. This results in smoother and more frequent corrections. Corrections will only happen if correct-player-movement is set to true.",
+        "type": "string"
+    },
+    "server-id": {
+        "env": "SERVER_ID",
+        "hidden": true,
+        "type": "string"
+    },
+    "server-name": {
+        "env": "SERVER_NAME",
+        "hidden": false,
+        "note": "Used as the server name\nAny string without semicolon symbol.",
+        "type": "string"
+    },
+    "server-port": {
+        "env": "SERVER_PORT",
+        "hidden": false,
+        "note": "Which IPv4 port the server should listen to. Integers in the range [1, 65535]",
+        "type": "int32"
+    },
+    "server-portv6": {
+        "env": "SERVER_PORT_V6",
+        "hidden": false,
+        "note": "Which IPv6 port the server should listen to. Integers in the range [1, 65535]",
+        "type": "int32"
+    },
+    "server-wakeup-frequency": {
+        "env": "SERVER_WAKEUP_FREQUENCY",
+        "hidden": true,
+        "type": "int32"
+    },
+    "texturepack-required": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "TEXTUREPACK_REQUIRED",
+        "hidden": false,
+        "note": "Force clients to use texture packs in the current world",
+        "type": "bool"
+    },
+    "tick-distance": {
+        "env": "TICK_DISTANCE",
+        "hidden": false,
+        "note": "The world will be ticked this many chunks away from any player. Integers in the range [4, 12] inclusive",
+        "type": "int32"
+    },
+    "trusted-key": {
+        "env": "TRUSTED_KEY",
+        "hidden": true,
+        "type": "string"
+    },
+    "view-distance": {
+        "env": "VIEW_DISTANCE",
+        "hidden": false,
+        "note": "The maximum allowed view distance in number of chunks. Positive integer equal to 5 or greater.",
+        "type": "int32"
+    },
+    "white-list": {
+        "allowed": [
+            "true",
+            "false"
+        ],
+        "env": "WHITE_LIST",
+        "hidden": true,
+        "type": "bool"
+    },
+    "wserver-retry-time": {
+        "env": "WSERVER_RETRY_TIME",
+        "hidden": true,
+        "type": "float"
+    },
+    "wsserver-encryption": {
+        "env": "WSSERVER_ENCRYPTION",
+        "hidden": true,
+        "type": "bool"
+    }
 }
