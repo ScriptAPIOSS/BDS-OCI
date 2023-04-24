@@ -1,0 +1,16 @@
+name: Build OCI image
+run-name: Build Image [${{ inputs.BDS_VERSION }}]
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - id: melange
+        uses: chainguard-dev/actions/setup-melange@main
