@@ -1,0 +1,33 @@
+package:
+  name: minecraft-bds
+  version: 1.20.0.21
+  description: Minecraft Bedrock Dedicated Server
+  # target-architecture:
+  #   - all
+  # copyright:
+  #   - license: Apache-2.0
+  #     paths:
+  #       - "*"
+
+environment:
+  contents:
+    repositories:
+      - https://dl-cdn.alpinelinux.org/alpine/edge/main
+      - https://dl-cdn.alpinelinux.org/alpine/edge/community
+    packages:
+      - alpine-baselayout-data
+      - ca-certificates-bundle
+      - curl
+
+pipeline:
+  - name: Install itzg/set-property
+    uses: go/install
+    with:
+      package: github.com/itzg/set-property
+      version: 0.1.1
+
+  - name: Fetch BDS zip
+    uses: fetch
+    with:
+      uri: https://minecraft.azureedge.net/bin-linux-preview/bedrock-server-${{package.version}}.zip
+      expected-sha256: 3660e8408321149f5d382bb8eeb9ea7b12ea8dd7ea66069da33f6f7383750ab2
