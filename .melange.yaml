@@ -36,3 +36,4 @@ pipeline:
   - name: Unzip BDS zip
     runs: |
       unzip bedrock-server-${{package.version}}.zip
+      rm bedrock-server-${{package.version}}.zip bedrock_server_* release-notes.txt
