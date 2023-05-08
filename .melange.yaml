@@ -30,5 +30,5 @@ pipeline:
     uses: fetch
     with:
       uri: https://minecraft.azureedge.net/bin-linux-preview/bedrock-server-${{package.version}}.zip
-      extract: true
+      extract: false
       expected-sha256: 62cabb47d59b32f7da90be694eff58eee05103a5cc4b77ba20ae1a0cee3be461
