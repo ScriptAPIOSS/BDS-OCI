@@ -1,4 +1,4 @@
-FROM alpine:3.16.2 AS builder
+FROM alpine:3.18.0 AS builder
 
 ARG PATH_MODIFIER
 ARG BDS_VERSION
