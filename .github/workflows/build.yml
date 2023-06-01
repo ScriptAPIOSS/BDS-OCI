@@ -125,7 +125,7 @@ jobs:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.MAJORMINORVERSION }} ${{ env.LATEST_TAG }} ${{ env.STABLE_TAG }} ${{ env.PREVIEW_TAG }} ${{ inputs.BDS_VERSION }}
           containerfiles: |
-            ./Containerfile
+            ./Dockerfile
           build-args: |
             BDS_VERSION=${{ inputs.BDS_VERSION }}
             PATH_MODIFIER=${{ env.PATH_MODIFIER }}
