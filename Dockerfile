@@ -30,7 +30,7 @@ RUN BDS_URL=`curl -s https://raw.githubusercontent.com/ScriptAPIOSS/BDS-Versions
 RUN unzip bds.zip
 RUN rm bds.zip bedrock_server_* release-notes.txt
 
-FROM ubuntu:jammy-20231004
+FROM ubuntu:jammy-20240212
 
 ENV LD_LIBRARY_PATH=./additional_libs/
 
